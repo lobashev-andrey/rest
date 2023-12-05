@@ -1,0 +1,16 @@
+spring:
+  main:
+    allow-circular-references: true
+  jpa:
+    generate-ddl: true
+  datasource:
+    url: jdbc:postgresql://localhost:5433/app_db
+    username: postgres
+    password: postgres
+    hikari:
+      schema: app_schema
+      connection-timeout: 1000
+      connection-init-sql: CREATE SCHEMA IF NOT EXIST app_schema # здесь необязательно - в init.sql это есть
+app:
+  check-client-api-header: false
+  client-api-key: 12345
